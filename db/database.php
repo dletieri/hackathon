@@ -1,7 +1,7 @@
 <?php
 	$hostname = "localhost";	// Vamos considerar localhost ou máquina local
 	$username = "userTeste"; 	// Username é userTeste
-	$password = "passTeste" 	// Password é passTeste (Cuidado com maiúsculas e minúsculas
+	$password = "passTeste"; 	// Password é passTeste (Cuidado com maiúsculas e minúsculas
 
 	mysql_connect("$hostname", "$username", "$password") or die(mysql_error());
 	echo "Conexão efectuada com sucesso!<br/>";
