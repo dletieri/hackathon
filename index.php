@@ -1,5 +1,5 @@
 <?php
 
-echo "teste";
+echo "Teste nada. Agora é Hackathon!";
 
 ?>
