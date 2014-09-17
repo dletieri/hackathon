@@ -33,6 +33,38 @@
 		PRIMARY KEY (objid)
 		) AUTO_INCREMENT=1 ;");
 
+	executeQuery($con, "CREATE TABLE $database.tb_metadata (
+		`objid` bigint(20) unsigned NOT NULL,
+		`type` text NOT NULL,
+		`value` text NOT NULL,
+
+		PRIMARY KEY (objid)
+		) AUTO_INCREMENT=1 ;");
+
+	executeQuery($con, "CREATE TABLE $database.tb_media (
+		`objid` bigint(20) unsigned NOT NULL,
+		`image` text,
+		`video` text,
+		`type` text NOT NULL,
+
+		PRIMARY KEY (objid)
+		) AUTO_INCREMENT=1 ;");
+	
+	executeQuery($con, "CREATE TABLE $database.tb_score (
+		`objid` bigint(20) unsigned NOT NULL,
+		`metadata_id` bigint(20) unsigned NOT NULL,
+		`gender` char NOT NULL,
+		`age` int NOT NULL,
+		`score` int NOT NULL,
+
+		PRIMARY KEY (objid),
+
+		INDEX(metadata_id),
+		FOREIGN KEY (metadata_id)
+			REFERENCES tb_metadata(objid)
+		) AUTO_INCREMENT=1 ;");
+	
+	// create relations
 	executeQuery($con, "CREATE TABLE $database.tbnn_entity_location (
 		`entity_id` bigint(20) unsigned NOT NULL,
 		`location_id` bigint(20) unsigned NOT NULL,
@@ -48,29 +80,30 @@
 
 	executeQuery($con, "CREATE TABLE $database.tbnn_entity_media (
 		`entity_id` bigint(20) unsigned NOT NULL,
-		`media_id` bigint(20) unsigned NOT NULL
-		)");
+		`media_id` bigint(20) unsigned NOT NULL,
 
-	executeQuery($con, "CREATE TABLE $database.tb_metadata (
-		`objid` bigint(20) unsigned NOT NULL,
-		`meta_type` text NOT NULL,
-		`meta_info` text NOT NULL,
-		`entity_id` bigint(20) unsigned NOT NULL,
-
-		PRIMARY KEY (objid),
 		INDEX(entity_id),
 		FOREIGN KEY (entity_id)
-			REFERENCES tb_entity(objid)
-		) AUTO_INCREMENT=1 ;");
+			REFERENCES tb_entity(objid),
 
-	executeQuery($con, "CREATE TABLE $database.tb_media (
-		`objid` bigint(20) unsigned NOT NULL,
-		`image` text,
-		`video` text,
-		`type` text NOT NULL,
-		PRIMARY KEY (objid)
-		) AUTO_INCREMENT=1 ;");
-	
+		INDEX(media_id),
+		FOREIGN KEY (media_id)
+			REFERENCES tb_media(objid)
+		)");
+
+	executeQuery($con, "CREATE TABLE $database.tbnn_entity_metadata (
+		`entity_id` bigint(20) unsigned NOT NULL,
+		`metadata_id` bigint(20) unsigned NOT NULL,
+
+		INDEX(entity_id),
+		FOREIGN KEY (entity_id)
+			REFERENCES tb_entity(objid),
+
+		INDEX(metadata_id),
+		FOREIGN KEY (metadata_id)
+			REFERENCES tb_metadata(objid)
+		)");
+
 	disconnect($con);
 	echo "<br>Success!<br/>";
 ?>
