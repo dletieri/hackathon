@@ -1,17 +1,54 @@
-<?php
-
-echo "Teste nada. Agora é Hackathon!<br><br>";
-
-echo "lat:".$_GET["lat"]."<br>";
-echo "lon:".$_GET["lon"]."<br>";
-echo "device:".$_GET["device"]."<br>";
-echo "cust:".$_GET["cust"]."<br>";
-
-echo 'https://api.thingspeak.com/update/?api_key=2V8RBHJ1SZ8KAI81&field1=D00123&field2=smartphone&field4='.$_GET["lat"].'&field5='.$_GET["lon"];
-
-file_get_contents('https://api.thingspeak.com/update/?api_key=2V8RBHJ1SZ8KAI81&field1='.$_GET["device"].'&field6='.$_GET["cust"].'&field4='.trim($_GET["lat"]).'&field5='.trim($_GET["lon"]));
-	
-
-?>
-
-
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        
+        <script src="js/jquery-1.11.1.min.js"></script>
+        
+        <script>
+            $.ajax({
+                url:"http://10.45.69.171/hackathon/iot_integration_suit.php",
+                type:"GET",
+                data:{query: "1"}}).done(
+                function(result){
+                    if (!result) {
+                        if ($("#img_on_off img").hasClass("on")) {
+                            $("#img_on_off img").removeClass("on").addClass("off");
+                        }
+                    } else {
+                        if ($("#img_on_off img").hasClass("off")) {
+                            $("#img_on_off img").removeClass("off").addClass("on");
+                        }
+                    }
+                    
+                    $("#img_on_off img").attr("src", "img/on_off.jpg");
+            });
+        </script>
+        
+        <style>
+            #body {
+                width: 570px;
+            }
+            
+            #img_on_off {
+                width: 190px; 
+                height: 190px; 
+                overflow: hidden;
+                float: right;
+            }
+            
+            img.on {
+                margin: 0;
+            }
+            
+            img.off {
+                margin: -198px 0 0 -198px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="body">
+            <img src="img/house.jpeg" width="380px" />
+            <div id="img_on_off"><img class="on" /></div>
+        </div>
+    </body>    
+</html>
