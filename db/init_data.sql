@@ -1,6 +1,7 @@
 
 INSERT INTO _DATABASE_.`tb_entity` (`objid`, `name`, `type`) VALUES (1, 'Hard Rock', 'Restaurante');
 INSERT INTO _DATABASE_.`tb_entity` (`objid`, `name`, `type`) VALUES (2, 'Pizza Hut', 'Restaurante');
+INSERT INTO _DATABASE_.`tb_entity` (`objid`, `name`, `type`) VALUES (3, 'Green Life Restaurant', 'Restaurante');
 
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (1, 'Menu', 'Barbecue');
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (2, 'Menu', 'Sushi');
@@ -15,10 +16,14 @@ INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUE
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 3);
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 4);
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 5);
-INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (2, 5);
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 6);
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 7);
+INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (2, 5);
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (2, 7);
+INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (3, 2);
+INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (3, 3);
+INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (3, 4);
+INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (3, 7);
 
 INSERT INTO _DATABASE_.`tb_score` (`objid`, `metadata_id`, `gender`, `age`, `score`) VALUES (1, 1, 'M', 'Y', 2);
 INSERT INTO _DATABASE_.`tb_score` (`objid`, `metadata_id`, `gender`, `age`, `score`) VALUES (2, 1, 'M', 'A', 3);
