@@ -1,8 +1,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-        
-        <script src="js/jquery-1.11.1.min.js"></script>
+       
+	<script type="text/javascript">
+	  setTimeout(function(){
+	    location = ''
+	  },60000)
+	</script>
+       
+ <script src="js/jquery-1.11.1.min.js"></script>
         
         <script>
             $.ajax({
