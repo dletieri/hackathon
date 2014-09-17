@@ -2,8 +2,8 @@
 	include 'util/db_utils.php';
 
 	$hostname = "localhost";	// Vamos considerar localhost ou máquina local
-	$username = "userTeste"; 	// Username é userTeste
-	$password = "passTeste"; 	// Password é passTeste (Cuidado com maiúsculas e minúsculas
+	$username = "root"; 	// Username é userTeste
+	$password = ""; 	// Password é passTeste (Cuidado com maiúsculas e minúsculas
 	$database = "BigData";
 
 	// Connect to Database
