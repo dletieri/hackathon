@@ -6,11 +6,11 @@
         
         <script>
             $.ajax({
-                url:"http://10.45.69.171/hackathon/iot_integration_suit.php",
+                url:"http://10.45.69.171/hackathon/housestatus.php",
                 type:"GET",
-                data:{query: "1"}}).done(
+                data:{act : "read"}}).done(
                 function(result){
-                    if (!result) {
+                    if (result == "0") {
                         if ($("#img_on_off img").hasClass("on")) {
                             $("#img_on_off img").removeClass("on").addClass("off");
                         }
@@ -19,7 +19,7 @@
                             $("#img_on_off img").removeClass("off").addClass("on");
                         }
                     }
-                    
+
                     $("#img_on_off img").attr("src", "img/on_off.jpg");
             });
         </script>
