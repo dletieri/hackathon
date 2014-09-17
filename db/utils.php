@@ -29,6 +29,10 @@ function executeQuery($con,$sql) {
 	return FALSE;
 }
 
+function select($con, $sql) {
+	return $con->query($sql);
+}
+
 function disconnect($con) {
 	mysqli_close($con);
 }
