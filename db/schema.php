@@ -1,6 +1,6 @@
 <?php
-	require_once 'util/db_utils.php';
-	require_once 'util/connection.php';
+	require_once './utils.php';
+	require_once './connection.php';
 
 	// Connect to Database
 	$con=connect($hostname, $username, $password);
