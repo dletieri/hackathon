@@ -1,13 +1,12 @@
 
-INSERT INTO _DATABASE_.`tb_entity` (`objid`, `name`, `type`) VALUES (1, 'Cachacaria Agua Doce', 'Restaurante');
-INSERT INTO _DATABASE_.`tb_entity` (`objid`, `name`, `type`) VALUES (2, 'BEATNIKS', 'Restaurante');
+INSERT INTO _DATABASE_.`tb_entity` (`objid`, `name`, `type`) VALUES (1, 'Hard Rock', 'Restaurante');
+INSERT INTO _DATABASE_.`tb_entity` (`objid`, `name`, `type`) VALUES (2, 'Pizza Hut', 'Restaurante');
 
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (1, 'Menu', 'Barbecue');
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (2, 'Menu', 'Sushi');
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (3, 'Menu', 'Vegetarian');
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (4, 'Menu', 'Pasta');
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (5, 'Menu', 'Pizza');
-
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (6, 'Happy Hour', 'Y');
 INSERT INTO _DATABASE_.`tb_metadata` (`objid`, `type`, `value`) VALUES (7, 'Happy Hour', 'N');
 
@@ -16,7 +15,9 @@ INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUE
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 3);
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 4);
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 5);
-INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (2, 6);
+INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (2, 5);
+INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 6);
+INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (1, 7);
 INSERT INTO _DATABASE_.`tbnn_entity_metadata` (`entity_id`, `metadata_id`) VALUES (2, 7);
 
 INSERT INTO _DATABASE_.`tb_score` (`objid`, `metadata_id`, `gender`, `age`, `score`) VALUES (1, 1, 'M', 'Y', 2);
