@@ -5,7 +5,7 @@
 	<script type="text/javascript">
 	  setTimeout(function(){
 	    location = ''
-	  },60000)
+	  },10000)
 	</script>
        
  <script src="js/jquery-1.11.1.min.js"></script>
