@@ -25,8 +25,12 @@ function executeQuery($con,$sql) {
 	  return TRUE;
 	}
 
-	echo "Error executing query: $sql". $sql . mysqli_error($con);
+	echo "<br><br><b>Error executing query:</b><br>$sql<br>". $sql . mysqli_error($con);
 	return FALSE;
+}
+
+function select($con, $sql) {
+	return $con->query($sql);
 }
 
 function disconnect($con) {
